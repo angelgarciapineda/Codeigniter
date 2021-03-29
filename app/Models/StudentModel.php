@@ -2,7 +2,7 @@
 	
 	use CodeIgniter\Model;
 
-	class RegisterModel extends Model {
+	class StudentModel extends Model {
 		public function getStudents() {
 			$Students = $this->db->query("SELECT * FROM alumno");
 			return $Students->getResult();
