@@ -1,20 +1,31 @@
-<?php namespace App\Models;
-	
-	use CodeIgniter\Model;
+<?php
 
-	class StudentModel extends Model {
-		public function getStudents() {
-			$Students = $this->db->query("SELECT * FROM alumno");
-			return $Students->getResult();
+namespace App\Models;
+
+use CodeIgniter\Model;
+
+class StudentModel extends Model
+{
+	public function getSpecializations()
+	{
+		$specializations = $this->db->query("SELECT * FROM specialization");
+		return $specializations->getResult();
+	}
+	public function AddStudent($datos)
+	{
+		$student = $this->db->table('student');
+		$student->insert($datos);
+		if ($student) {
+			//$last_id = $this->db->query("SELECT MAX(student_id) FROM student");
+			$last_id=1;
+		} else {
+			$last_id = 0;
 		}
-		/* public function insertar($datos) {
-			$Nombres = $this->db->table('t_personas');
-			$Nombres->insert($datos);
+		//return $this->db->insertID();
+		return $last_id;
+	}
 
-			return $this->db->insertID(); 
-		}
-
-		public function obtenerNombre($data) {
+	/* public function obtenerNombre($data) {
 			$Nombres =  $this->db->table('t_personas');
 			$Nombres->where($data);
 			return $Nombres->get()->getResultArray();
@@ -32,5 +43,4 @@
 			$Nombres->where($data);
 			return $Nombres->delete();
 		} */
-	}
-?>
+}

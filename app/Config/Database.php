@@ -31,11 +31,11 @@ class Database extends Config
 	 * @var array
 	 */
 	public $default = [
-		'DSN'      => 'mysql:host=localhost;dbname=banca;charset=utf8mb4',
-		'hostname' => 'localhost',
-		'username' => 'root',
-		'password' => '',
-		'database' => 'utp',
+		'DSN'      => '',
+		'hostname' => 'utp.c48curxpcfx0.us-east-2.rds.amazonaws.com',
+		'username' => 'admin',
+		'password' => 'seguridad',
+		'database' => 'controlutp',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
 		'pConnect' => false,

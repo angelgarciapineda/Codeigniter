@@ -21,7 +21,7 @@
             </div>
             <div class="col-sm-4">
                 <h1>Login de utp</h1>
-                <form action="<?php echo base_url('/login') ?>" method="POST"></form>
+                <form action="<?php echo base_url('') . '/login' ?>" method="POST"></form>
                 <label for="usuario">Usuario</label>
                 <input type="text" name="usuario" id="" class="form-control">
                 <label for="password">Usuario</label>
