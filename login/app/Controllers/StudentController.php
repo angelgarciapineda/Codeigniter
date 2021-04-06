@@ -26,6 +26,10 @@ class StudentController extends BaseController
 		];
 		return view('register/index', $data);
 	}
+
+	public function verifpswrd(){
+	}
+
 	public function addStudent() {
 		$datos = [
 					"student_name" => $_POST['txtname'],
@@ -35,6 +39,7 @@ class StudentController extends BaseController
 					"high_school_mark" => $_POST['txtmark'],
 					"email" => $_POST['txtemail'],
 					"phone" => $_POST['txtphone'],
+					"psword"=> $_POST['txtpswrd'],
 					"student_status" => 1,
 					"specialization_id" => $_POST['txtspecialization'],
 					"created_at" => date("Y-m-d H:i:s"),

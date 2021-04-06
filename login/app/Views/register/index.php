@@ -18,18 +18,30 @@
             <div class="col-sm-3">
             </div>
             <div class="col-sm-6">
-                <form class="row g-3" action="<?php echo base_url() . '/register' ?>" method="POST" autocomplete="on">
+                <h1>Ya casi eres UTP</h1>
+                <h2>Completa el registro</h2>
+                <form class="row g-3" action="<?php echo base_url() . '/index' ?>" method="POST" autocomplete="on">
                     <div class="col-12">
                         <label for="inputName" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" name="txtname" id="inputName" placeholder="Luis Angel">
+                        <input type="text" class="form-control" name="txtname" id="inputName" placeholder="Nombre completo">
                     </div>
                     <div class="col-6">
                         <label for="inputLastName" class="form-label">Apellido paterno</label>
-                        <input type="text" class="form-control" name="txtlast" id="inputLastName" placeholder="Garcia">
+                        <input type="text" class="form-control" name="txtlast" id="inputLastName" placeholder="Apellido paterno">
                     </div>
                     <div class="col-md-6">
                         <label for="inputMotherLastName" class="form-label">Apellido materno</label>
-                        <input type="text" class="form-control" name="txtmother" id="inputMotherLastName" placeholder="Garcia">
+                        <input type="text" class="form-control" name="txtmother" id="inputMotherLastName" placeholder="Apellido materno">
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label" for="inputDate">
+                            Fecha de nacimiento
+                        </label>
+                        <input type="date" class="form-control" name="txtdate" id="inputDate">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputCarrera" class="form-label">Carrera</label>
+                        <input type="text" class="form-control" name="txtcarrera" id="inputCarrera" placeholder="">
                     </div>
                     <div class="col-md-6">
                         <label for="inputSpecialization" class="form-label">Division</label>
@@ -42,27 +54,28 @@
                             ?>
                         </select>
                     </div>
-
-                    <div class="col-6">
-                        <label class="form-label" for="inputDate">
-                            Fecha de nacimiento
-                        </label>
-                        <input type="date" class="form-control" name="txtdate" id="inputDate">
-                    </div>
-                    <div class="col-3">
+                    <div class="col-12">
                         <label for="inputMark" class="form-label">Calificación</label>
-                        <input type="text" class="form-control" name="txtmark" id="inputMark">
+                        <input type="text" class="form-control" name="txtmark" id="inputMark" placeholder="Promedio de bachillerato">
                     </div>
-                    <div class="col-9">
+                    <div class="col-6">
                         <label for="inputEmail" class="form-label">Email</label>
-                        <input type="email" class="form-control" name="txtemail" id="inputEmail" placeholder="garciapinedaluisangel@gmail.com">
+                        <input type="email" class="form-control" name="txtemail" id="inputEmail" placeholder="correo@algo.com">
                     </div>
                     <div class="col-6">
                         <label for="inputPhone" class="form-label">Telefono</label>
                         <input type="text" class="form-control" name="txtphone" id="inputPhone">
                     </div>
+                    <div class="col-6">
+                        <label for="pswd" class="form-label">Contraseña</label>
+                        <input type="text" class="form-control" name="txtpswrd" id="pswd" placeholder="Crea una contraseña">
+                    </div>
+                    <div class="col-6">
+                        <label for="confir_pswd" class="form-label">Confirmar contraseña</label>
+                        <input type="text" class="form-control" name="txtconfirpswrd" id="confir_pswd" placeholder="Confirma tu contraseña">
+                    </div>
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary" style="float:right;">Registrarse</button>
+                        <button type="submit" class="btn btn-primary col-12" style="float:right;">Registrarse</button>
                     </div>
                 </form>
             </div>

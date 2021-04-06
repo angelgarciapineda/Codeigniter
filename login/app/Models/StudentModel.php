@@ -11,6 +11,7 @@ class StudentModel extends Model
 		$specializations = $this->db->query("SELECT * FROM specialization");
 		return $specializations->getResult();
 	}
+
 	public function AddStudent($datos)
 	{
 		$student = $this->db->table('student');
@@ -23,6 +24,20 @@ class StudentModel extends Model
 		}
 		//return $this->db->insertID();
 		return $last_id;
+	}
+
+	public function comprobarCred($email) {
+		$resul=$this->db->table('student');
+		$resul->where('email', $email);
+
+		$p = "";
+
+		foreach ($resul->get()->getResultArray() as $row)
+		{
+			$p = $row['psword'];
+		}
+
+		return $p;
 	}
 
 	/* public function obtenerNombre($data) {
