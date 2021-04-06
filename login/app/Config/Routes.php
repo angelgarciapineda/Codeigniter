@@ -32,11 +32,13 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
-$routes->post('/', 'Home::conecta');
+$routes->get('/', 'Login::index');
+$routes->post('/', 'Login::conecta');
 
 $routes->get('/register', 'StudentController::index');
 $routes->post('/register', 'StudentController::addStudent');
+
+$routes->get('/home', 'Home::index');
 
 /*
  * --------------------------------------------------------------------

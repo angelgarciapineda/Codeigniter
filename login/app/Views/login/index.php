@@ -28,7 +28,7 @@
                 <input type="password" name="txtpswrd" id="" class="form-control">
                 <br>
                 <button type="submit" class="btn btn-primary">Ingresar</button>
-
+                <a href="<?php echo base_url() . '/register' ?>">Eres nuevo ?</a>
                 </form>
             </div>
             <div class="col-sm-4">
@@ -48,7 +48,7 @@
         let mensaje = '<?php echo $msj ?>';
 
         if (mensaje == '1') {
-            return view('home/index');
+            window.location='http://localhost/codeigniter/login/public/home';
         } else if (mensaje == '0') {
             swal(':(', 'Correo o contraseña incorrectos!', 'error');
         }

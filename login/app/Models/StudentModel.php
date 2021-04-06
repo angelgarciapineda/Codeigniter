@@ -26,18 +26,27 @@ class StudentModel extends Model
 		return $last_id;
 	}
 
-	public function comprobarCred($email) {
+	public function comprobarCred($email, $pass) {
 		$resul=$this->db->table('student');
 		$resul->where('email', $email);
 
 		$p = "";
+		$r = false;
 
-		foreach ($resul->get()->getResultArray() as $row)
+		$row = $resul->get()->getRow();
+
+		if (isset($row))
 		{
-			$p = $row['psword'];
+			$p = $row->psword;
 		}
 
-		return $p;
+		if($p == $pass){
+			$r = true;
+		} else {
+			$r = false;
+		}
+
+		return $r;
 	}
 
 	/* public function obtenerNombre($data) {
