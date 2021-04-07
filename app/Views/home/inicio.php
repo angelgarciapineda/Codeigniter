@@ -51,7 +51,9 @@
             </div>
         </div>
     </nav>
-
+    <div>
+        <p>Horarios</p>
+    </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
