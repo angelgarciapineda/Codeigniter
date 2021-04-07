@@ -28,7 +28,7 @@
                         <div class="table table-responsive">
                             <table class="table table-hover table-bordered">
                                 <tr>
-                                    <th>Nombre</th>
+                                    <th>Nombre jeje</th>
                                     <th>Apellido paterno</th>
                                     <th>Apellido materno</th>
                                     <th>Email</th>
