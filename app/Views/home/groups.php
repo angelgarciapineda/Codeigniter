@@ -14,23 +14,29 @@
 
 <body>
     <div class="d-flex justify-content-center" style="padding-top:50px;">
-        <div>
-            <form action="<?php echo base_url() . '/home' ?>" method="POST">
-                <div class="card" style="width: 18rem;">
-                    <div class="card-body">
-                        <div class="mb-3">
-                            <label for="dateConf" class="form-label">Configurar fecha actual (periodo)</label>
-                            <select id="inputCuatri" class="form-select" name="txtcuatri">
-                                <option value=1>Enero - Abril</option>
-                                <option value=2>Mayo - Agosto</option>
-                                <option value=3>Septiembre - Diciembre</option>
-                            </select>
-                            <button type="submit" class="btn btn-primary">Mostrar</button>
-                        </div>
+        <form action="<?php echo base_url() . '/home/groups' ?>" method="POST">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Inscribise a un grupo</h5>
+                    <p class="card-text">Grupos disponibles</p>
+                    <div>
+                        <select id="inputGroup" class="form-select" name="txtgroup">
+                            <option value="0">Elige un un grupo</option>
+                            <?php
+                            if ($groups != null) {
+                                foreach ($groups as $key => $value) {
+                                    echo "<option value='" . $value->grouputp_id . "'>" . $value->grupo . "</option>";
+                                }
+                            } else {
+                                echo "<option value='notOption'>Selecciona un cuatrimestre</option>";
+                            }
+                            ?>
+                        </select>
                     </div>
+                    <button type="submit" class="btn btn-primary">Inscribirme</button>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
     <!-- Optional JavaScript; choose one of the two! -->
 
