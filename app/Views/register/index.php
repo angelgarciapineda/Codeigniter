@@ -20,7 +20,7 @@
             <div class="col-sm-6">
                 <h1>Ya casi eres UTP</h1>
                 <h2>Completa el registro</h2>
-                <form class="row g-3" action="<?php echo base_url() . '/index' ?>" method="POST" autocomplete="on">
+                <form class="row g-3" action="<?php echo base_url() . '/register' ?>" method="POST" autocomplete="on">
                     <div class="col-12">
                         <label for="inputName" class="form-label">Nombre</label>
                         <input type="text" class="form-control" name="txtname" id="inputName" placeholder="Nombre completo">
