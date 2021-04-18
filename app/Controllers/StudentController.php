@@ -18,7 +18,7 @@ class StudentController extends BaseController
 	public function index(){
 		$crud = new StudentModel();
 		$mensaje = session('mensaje');
-		$datos = $crud->getSpecializations();
+		$datos = $crud->getDegree();
 
 		$data = [
 			"datitos"=>$datos,

@@ -14,40 +14,60 @@
 
 <body>
     <div class="d-flex justify-content-center" style="padding-top:50px;">
-        <form action="<?php echo base_url() . '/home/groups' ?>" method="POST">
-            <div class="card" style="width: 18rem;">
+        <form class="row g-3" action="<?php echo base_url() . '/home/groups' ?>" method="POST">
+            <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Inscribise a un grupo</h5>
-                    <p class="card-text">Grupos disponibles</p>
-                    <div>
-                        <select id="inputGroup" class="form-select" name="txtgroup">
-                            <option value="0">Elige un un grupo</option>
+                    <h5 class="card-title">Inscribir alumnos a un grupo</h5>
+                    <div class="col-12">
+                        <select id="inputStudent" class="form-select" name="txtstudent">
+                            <option value="0">Estudiante</option>
                             <?php
-                            if ($groups != null) {
-                                foreach ($groups as $key => $value) {
-                                    echo "<option value='" . $value->grouputp_id . "'>" . $value->grupo . "</option>";
+                            if ($student != null) {
+                                foreach ($student as $key => $value) {
+                                    echo "<option value='" . $value->student_id . "'>" . $value->studentInfo . "</option>";
                                 }
                             } else {
-                                echo "<option value='notOption'>Selecciona un cuatrimestre</option>";
+                                echo "<option value='notOption'>Selecciona un estudiante</option>";
                             }
                             ?>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Inscribirme</button>
+                    <div class="col-12">
+                        <select id="inputGrupos" class="form-select" name="txtgrupo">
+                            <option value="0">Grupos</option>
+                            <?php
+                            if ($grupos != null) {
+                                foreach ($grupos as $key => $value) {
+                                    echo "<option value='" . $value->grouputp_id . "'>" . $value->grupo . "</option>";
+                                }
+                            } else {
+                                echo "<option value='notOption'>Selecciona un grupo</option>";
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Inscribir</button>
                 </div>
             </div>
         </form>
     </div>
     <!-- Optional JavaScript; choose one of the two! -->
-
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-    -->
+    <!-- Sweet alert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script type="text/javascript">
+        let mensaje = '<?php echo $msj ?>';
+
+        if (mensaje == '1') {
+            swal(':D', 'Se inscribio al alumno con exito!', 'success');
+        } else if (mensaje == '0') {
+            swal(':(', 'Hubo un error al enviar tu solicitud!', 'error');
+        }
+    </script>
 </body>
 
 </html>

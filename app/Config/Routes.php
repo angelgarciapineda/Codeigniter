@@ -39,9 +39,10 @@ $routes->get('/register', 'StudentController::index');
 $routes->post('/register', 'StudentController::addStudent');
 
 $routes->get('/home', 'Home::index');
-$routes->post('/home', 'Home::getGroups');
+$routes->post('/home', 'Home::addStudentGroup');
+
 $routes->get('home/groups','Home::indexGroups');
-$routes->post('home/groups','Home::addStudentGroup');
+$routes->post('home/groups','Home::addStudentGroupDef');
 
 /*
  * --------------------------------------------------------------------

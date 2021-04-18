@@ -39,17 +39,13 @@
                         </label>
                         <input type="date" class="form-control" name="txtdate" id="inputDate">
                     </div>
-                    <div class="col-md-6">
-                        <label for="inputCarrera" class="form-label">Carrera</label>
-                        <input type="text" class="form-control" name="txtcarrera" id="inputCarrera" placeholder="">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="inputSpecialization" class="form-label">Division</label>
+                    <div class="col-md-12">
+                        <label class="form-label">Division</label>
                         <select id="inputSpecialization" class="form-select" name="txtspecialization">
                             <option value="0">Elige una division</option>
                             <?php
                             foreach ($datitos as $key => $value) {
-                                echo "<option value='" . $value->specialization_id . "'>" . $value->specialization . "</option>";
+                                echo "<option value='" . $value->specialization_id . "'>" . $value->division . "</option>";
                             }
                             ?>
                         </select>
@@ -68,11 +64,11 @@
                     </div>
                     <div class="col-6">
                         <label for="pswd" class="form-label">Contraseña</label>
-                        <input type="text" class="form-control" name="txtpswrd" id="pswd" placeholder="Crea una contraseña">
+                        <input type="password" class="form-control" name="txtpswrd" id="pswd" placeholder="Crea una contraseña">
                     </div>
                     <div class="col-6">
                         <label for="confir_pswd" class="form-label">Confirmar contraseña</label>
-                        <input type="text" class="form-control" name="txtconfirpswrd" id="confir_pswd" placeholder="Confirma tu contraseña">
+                        <input type="password" class="form-control" name="txtconfirpswrd" id="confir_pswd" placeholder="Confirma tu contraseña">
                     </div>
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary col-12" style="float:right;">Registrarse</button>

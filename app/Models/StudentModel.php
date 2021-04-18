@@ -6,10 +6,32 @@ use CodeIgniter\Model;
 
 class StudentModel extends Model
 {
+	public function getDegree()
+	{
+		$degrees = $this->db->query("select specialization_id, concat(degree,' : ', specialization) as division from specialization inner join degree on degree.degree_id = specialization.degree_id;");
+		return $degrees->getResult();
+	}
+
+	public function getStudentInfo(){
+		$studentInfo = $this->db->query("SELECT * FROM consultaStudentInfo");
+		return $studentInfo->getResult();
+	}
+
+	public function getGroups(){
+		$groups = $this->db->query("SELECT * FROM gruposInfo");
+		return $groups->getResult();
+	}
+
 	public function getSpecializations()
 	{
 		$specializations = $this->db->query("SELECT * FROM specialization");
 		return $specializations->getResult();
+	}
+
+	public function getCuatris()
+	{
+		$cuatrimestres = $this->db->query("SELECT * FROM consultaCuatris");
+		return $cuatrimestres->getResult();
 	}
 
 	public function getListGroups($date1, $date2){
@@ -75,6 +97,20 @@ class StudentModel extends Model
 		}
 
 		return $r;
+	}
+
+	public function addStudentGroupDef($grupo, $student){
+		$groups = $this->db->query("UPDATE student_group SET 
+		grouputp_id = $grupo
+		WHERE
+		student_id = $student;");
+
+		if ($groups) {
+			$last_id=1;
+		} else {
+			$last_id = 0;
+		}
+		return $last_id;
 	}
 
 	/* public function obtenerNombre($data) {
